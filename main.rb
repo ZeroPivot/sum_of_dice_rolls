@@ -1,22 +1,23 @@
 # Sum of dice rolls
 
-require 'set'
+#For some random dice roll set d(x) = { |x| }, where |x| expands to [x_1, x_2, ..., x_n]
+#we get the sum of d(x) using inject, but for simplicities sake we use each:
+# 
+# sum = 0
+# d(x).each do |i|
+#   sum += i
+# end
 
-For some random dice roll set d(x) = { |x| }, where |x| expands to [x_1, x_2, ..., x_n]
+NUMDIE_SET = 100
+DIE_SIDES = 2 # Make it 2-sided die rolls
 
-
-
-test_roll = [rand(1..6),rand(1..6),rand(1..6),rand(1..6)]
-
-results = test_roll.inject do |sum, x|
-  sum + x
+def process(n_o_d)
+  sum_ary = [] 
+ n_o_d.times do
+    sum_ary << rand(1..DIE_SIDES)
+ end
+  return sum_ary.inject{ |sum, n| sum + n}
 end
-
-p results
-
-def dice_roll()
-end
+p process(NUMDIE_SET) # print the results
 
 
-def sum_of_dice_roll(dice)
-end
