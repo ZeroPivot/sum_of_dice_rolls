@@ -21,3 +21,4 @@ end
 p process(NUMDIE_SET) # print the results
 
 
+puts "test"
